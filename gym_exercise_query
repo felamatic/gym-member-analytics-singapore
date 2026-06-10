@@ -1,0 +1,30 @@
+-- =================================================================================
+-- PROJECT: Singapore Gym Member Physiological & Operational Insights
+-- AUTHOR: Felicia Phua
+-- DATABASE DIALECT: Google BigQuery Standard SQL
+-- DESCRIPTION: A collection of analytical queries mapping gym member metrics 
+--              to operational strategy and health psychology insights.
+-- =================================================================================
+
+
+-- =================================================================================
+-- INSIGHT 1: Cardiovascular Strain & Corporate Burnout Detection
+-- OBJECTIVE: Identify members showing signs of poor physical recovery or high stress.
+--            Filters for high resting BPM (>70) and narrow Heart Rate Reserve (<100).
+--            Additionally comparing numbers between Genders to determine which gender group will mindfulness programs will benefit more.
+-- =================================================================================
+
+WITH client_HRR_risk AS (
+SELECT 
+  Age,
+  Gender,
+  Max_BPM - Resting_BPM AS Heart_Rate_Reserve
+FROM `constant-carver-447014-e9.gym_members_exercise_tracking.exercise_tracking`
+WHERE (Max_BPM - Resting_BPM) < 100
+AND Resting_BPM > 70)
+
+SELECT
+  Gender,
+  COUNT(Gender) AS Number_At_Risk
+FROM client_HRR_risk
+GROUP BY Gender
