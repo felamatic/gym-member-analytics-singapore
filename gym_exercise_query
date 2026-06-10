@@ -28,3 +28,32 @@ SELECT
   COUNT(Gender) AS Number_At_Risk
 FROM client_HRR_risk
 GROUP BY Gender
+
+-- =================================================================================
+-- INSIGHT 2: Predictive Analytics - Advanced Training Plateaus
+-- OBJECTIVE: Isolate highly active, experienced members who work out 4+ days/week 
+--            but maintain a high body fat percentage, indicating nutritional or 
+--            recovery recovery breakdowns. Identify the breakdown across workout type to determine which workout type group could use better programs that target lowering fat percentage. Uses a CTE for structured sub-filtering.
+-- =================================================================================
+
+WITH Active_Experienced_Members as (
+SELECT
+  `Workout_Frequency _days_week_`,
+  Workout_Type,
+  Experience_Level,
+  Fat_Percentage,
+  Calories_Burned,
+  BMI
+FROM `constant-carver-447014-e9.gym_members_exercise_tracking.exercise_tracking`
+WHERE `Workout_Frequency _days_week_` >= 4
+AND Experience_Level > 1
+ORDER BY `Workout_Frequency _days_week_`, Experience_Level
+)
+
+SELECT
+  Workout_Type,
+  COUNT(*) AS Member_Number
+FROM Active_Experienced_Members
+WHERE Fat_Percentage > 25.0
+GROUP BY Workout_Type 
+ORDER BY Member_Number DESC
