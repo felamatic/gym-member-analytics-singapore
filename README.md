@@ -11,9 +11,13 @@ The dataset analyzed includes the following columns:
 
 ## Key Business Insights Discovered
 ### 1. Cardiovascular Strain & Corporate Burnout Detection
-* **Objective:** Identified members with a narrow Heart Rate Reserve (<100 BPM gap between Max and Resting), marking potential chronic fatigue or poor recovery.
+* **Objective:** Identified members with a narrow Heart Rate Reserve (<100 BPM gap between Max and Resting) and high Resting BPM (> 70), marking potential chronic fatigue or poor recovery.
 * **Impact:** Allows corporate wellness teams to target these segments for low-intensity recovery or mindfulness workshops.
 
 ### 2. Operational & Equipment Depreciation Report
 * **Objective:** Grouped members by `Workout_Type` to evaluate which modalities demand the longest session durations and highest caloric burn.
 * **Impact:** Aids facilities managers in budgeting for targeted equipment maintenance (e.g., treadmill belt wear vs. free-weight scaling).
+
+### 3. Predictive Analytics - Advanced Training Plateaus
+* **Objective:** Isolated highly active, experienced members who work out 4+ days/week but maintain a high body fat percentage, indicating nutritional or recovery recovery breakdowns.
+* **Impact:** Allows fitness program planners to determine which workout type group could use better programs that target lowering fat percentage. 
