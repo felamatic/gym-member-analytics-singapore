@@ -21,5 +21,5 @@ The dataset analyzed includes the following columns:
 ### 3. Predictive Analytics - Advanced Training Plateaus
 * **Objective:** Isolated highly active, experienced members who work out 4+ days/week but maintain a high body fat percentage, indicating nutritional or recovery recovery breakdowns.
 * **Impact:** Allows fitness program planners to determine which workout type group could use better programs that target lowering fat percentage.
-* **The Finding:** Visual analysis revealed that **Strength Training** exhibits the highest concentration of highly active, experienced members hitting physical plateaus (maintaining >25% body fat despite a training frequency of 4+ days per week).
+* **The Finding:** [Visual analysis]([url](https://public.tableau.com/app/profile/felicia.phua/viz/SingaporeGymMemberAnalytics/Sheet1?publish=yes)) revealed that **Strength Training** exhibits the highest concentration of highly active, experienced members hitting physical plateaus (maintaining >25% body fat despite a training frequency of 4+ days per week).
 * **Strategic Recommendation:** Gym operations should develop targeted nutritional workshops or metabolic conditioning "add-on" classes tailored specifically for the Strength training demographic to improve results and mitigate member cancellation risks.
